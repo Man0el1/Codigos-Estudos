@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undertale 3</title>
+</head>
+<body style="margin: 0; background-color: black;">
+<img src="https://fontmeme.com/permalink/230804/696c92e8074ddbb41941692853a3e716.png" alt="undertale logo" style="margin: auto; margin-top:1rem; display: flex;">
+<img src="https://media.tenor.com/i9xaK64oT-oAAAAM/sans-fight.gif" alt="sans" style="margin: auto; margin-top:1rem; display: flex;">
+<canvas width=600 height=300 style="margin: auto; margin-top:1rem; display: flex; border-radius: 0.2rem; border: 0.5rem solid white;"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 300);
+    //coodenadas iniciais
+    var x = 300;
+    var y = 290;
+    //detectar teclas de seta (números ja categorizados em uma tabela)
+    var esquerda = 37;
+    var cima = 38;
+    var direita = 39;
+    var baixo = 40;
+    //taxa pra andar
+    var taxa = 20
+    //função: desenha um circulo
+    function desenhaCirculo(x, y, raio) {
+
+        pincel.fillStyle = 'blue';
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+    //função: limpa tela
+    function limpaTela() {
+
+        pincel.clearRect(0, 0, 600, 300);
+    }
+    //função: chama o limpa tela e desenha um novo circulo
+    function atualizaTela() {
+
+        limpaTela();
+        desenhaCirculo(x, y, 10);
+    }
+    function leituraTeclado(evento) {
+        switch (evento.keyCode){
+        case esquerda:
+            x=x-taxa;
+            break;
+        case cima:
+            y=y-taxa;
+            break;
+        case direita:
+            x=x+taxa;
+            break;
+        case baixo:
+            y=y+taxa;
+        }
+    }
+    setInterval(atualizaTela, 20);
+    document.onkeydown = leituraTeclado;
+
+</script>
+</body>
+</html>

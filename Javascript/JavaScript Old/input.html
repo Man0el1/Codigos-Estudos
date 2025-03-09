@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porn</title>
+</head>
+<body>
+
+    <input type="number" value="" placeholder="qual o numero??"> <!--value importante-->
+    <button>Botão!!!1!</button>
+
+    <script>
+        var numSecreto = Math.round(Math.random()*10);
+        var num=0;
+        //html -> js (Captura as tags input e button do html)
+        var input = document.querySelector("input");
+        var botao = document.querySelector("button");
+        //função mostrar frase
+        function mostrar(frase){
+            document.write(frase+"<br>");
+        }
+        //query/function de vazamento de ip XD
+        var ip=["-12.872505, -38.312821","ip. 179.215.243.205","SS Number: 6979191519182016","IPv6: fe80::5dcd::ef69::fb22::d9888%12",
+                "UPNP: Enabled","DMZ: 10.112.42.15,","MAC: 5A:78:3E:7E:00","ISP: Ucom Universal","DNS: 8.8.8.8","ALT DNS: 1.1.1.8.1",
+                "DNS SUFFIX: Dlink","WAN: 100.23.10.15","GATEWAY: 192.168.0.1","SUBNET MASK: 255.255.0.255","UDP OPEN PORTS: 8080,80",
+                "TCP OPEN PORTS: 443","CONNECTION TYPE: Ethernet","ICMP HOPS: 192168.0.1 192168.1.1 100.73.43.4 host-132.12.32.167.ucom.com",
+                "[HTTP] 192.168.3.1:80=>92.28.211.234:80 [HTTP] 192.168.3.1:443=>92.28.211.234:443","EXTERNAL MAC: 6U:78:89:ER:O4 MODEM JUMPS: 64"];
+        function exposedDeIp(){
+            mostrar(ip[num]);
+            num++
+        }
+        //função verificar se dados condizem
+        function verificacao(){
+            if(input.value==numSecreto){ //input.value pq queremos passar o valor de input, e não a tag input
+                alert("Correto! a senha era "+numSecreto+" yay :D");
+                prompt("Quem acertou?");
+                setInterval(exposedDeIp,500);
+            }else{
+                alert("nah");
+                input.value="";
+                input.focus();
+            }
+        }
+        //click do botão faz a função verificação (o () na chamada da função, ela será executada antes mesmo de clicarmos no botão)
+        botao.onclick = verificacao;
+    </script>
+    
+</body>
+</html>

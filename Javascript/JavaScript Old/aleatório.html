@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porn</title>
+</head>
+<body>
+    <script>
+        //Função mostrar frase
+        function mostrar(frase){
+            document.write(frase+"<br>");
+        }
+        //Função novo sorteio
+        function sorteio(){
+            return Math.round(Math.random()*10);
+        }
+        var numeroPensado = sorteio();
+        var chute = parseInt(prompt("Já pensei. Qual você acha que é?"));
+        while(true){
+            while( isNaN(chute) ) {
+                var chute = parseInt(prompt("Digite um número:"));
+            }
+            if(chute == numeroPensado) {
+                mostrar("Uau! Você acertou, pois eu pensei no " + numeroPensado);
+                break;
+            }else{
+                var chute = parseInt(prompt("Tente de novo:"));
+            }
+        }
+    </script>
+</body>
+</html>

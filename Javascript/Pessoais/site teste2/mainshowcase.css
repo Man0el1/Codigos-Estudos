@@ -1,0 +1,187 @@
+body{
+    margin: 0;
+}
+/*Header e Nav itens*/
+header{
+    display: flex;
+    align-items: center;
+    background: linear-gradient(180deg, #14192c, #293150);
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 4;
+}
+#navitens{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    list-style: none;
+}
+#headerlogo{
+    color: white;
+    font-size: 1.5rem;
+    margin-left: 7rem;
+    text-decoration: none;
+}
+.navlink{
+    color: white;
+    text-decoration: none;
+    margin-right: 2rem;
+    transition: 0.3s;
+}
+.navlink:hover {
+    background: linear-gradient(180deg, #14192c, #4b5a92)
+}
+/*Logo*/
+#logodiv{
+    display: flex;
+    position: relative;
+    background: linear-gradient(140deg, #301735, #121d48, #0d0521);
+    background-size: 400%;
+    padding-bottom: 2vw;
+    flex-direction: column;
+    color: white;
+	animation: gradient 20s ease-in-out infinite;
+    clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        100% calc(100% - 3vw),
+        0% 100%);
+    z-index: 3;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+#logo{
+    font-size: 6rem;
+    margin-top: 2rem;
+    margin-bottom: 0;
+    margin-left: 15vw;
+}
+#subtitle{
+    font-style: oblique;
+    margin-left: 12.3vw;
+}
+#logotext{
+    margin-left: 5vw;
+    max-width: 51vw;
+    background-color: #00000030;
+    padding: 1rem;
+}
+#logoimg{
+    position: absolute;
+    width: 20rem;
+    left: 65%;
+    top: 17%;
+}
+/*nav1*/
+#nav1{
+    display: flex;
+    margin-top: -4vw;
+}
+.nav1landr{
+    color: white;
+    width: 100%;
+    padding-bottom: 10vw;
+    padding-top: 10vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.exampleh1{
+    background-color: #00000030;
+    padding: 1rem;
+}
+#nav1left{
+    margin-right: -4vw;
+    clip-path: polygon( 0% 0%, 100% 0%, 93% 100%, 0% 100%);
+    z-index: 2;
+    background:#14192c;
+    background-size: 200%;
+}
+#nav1left:hover{
+    animation: nav1lback 5s ease-in-out infinite;
+}
+@keyframes nav1lback {
+    0% {
+        background-image: linear-gradient(315deg, #14192c 32%, #302e5b 38%,#14192c 44%);
+        background-position: 130% 50%;
+    }
+    100% {
+        background-image: linear-gradient(315deg, #14192c 32%, #302e5b 38%,#14192c 44%);
+        background-position: 70% 50%;
+    }
+}
+#nav1right{
+    background-color: rgb(36, 45, 68);
+    z-index: 1;
+}
+#nav1right:hover{
+    animation: nav1rback 10s linear infinite;
+}
+@keyframes nav1rback {
+    0%{
+        background-image: url(diamonds.png);
+        opacity: 0;
+        background-position: -1000% 2000%;
+    }
+    5%{
+        background-image: url(diamonds.png);
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+    100%{
+        background-image: url(diamonds.png);
+        background-position: 0% 0%;
+        opacity: 0;
+    }
+}
+/*nav2*/
+#nav2{
+    color: white;
+    display: flex;
+    justify-content: center;
+    background-image: url(space.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#nav2text{
+    margin: 10vw;
+}
+/*Responsive website*/
+@media screen and (max-width: 1000px){
+    /*Logo*/
+    #logo{
+        margin-left: 0;
+        text-align: center;
+    }
+    #subtitle{
+        margin-left: 0;
+        text-align: center;
+        margin-bottom: 1vw;
+    }
+    #logotext{
+        margin-left: 0;
+        text-align: center;
+        max-width: none;
+    }
+    #logoimg{
+        position: static;
+        padding-bottom: 1rem;
+        display: block;
+        margin: auto;
+        float: none;
+        /*Nav1*/
+    }
+}

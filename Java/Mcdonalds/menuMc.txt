@@ -1,0 +1,39 @@
+Big Mac
+499
+22.90
+Quarterao com queijo
+549
+24.90
+Cheddar McMelt
+505
+24.90
+McNifico Bacon
+662
+23
+McChicken
+396
+20.90
+Big Tasty
+852
+26
+Big Tasty Turbo Bacon
+1002
+27
+Duplo Quarterao
+819
+23
+McChicken Bacon
+448
+22.90
+McCrispy Chicken Deluxe
+625
+25.90
+McCrispy Chicken Classic
+926
+23.90
+Duplo Burger Bacon
+478
+26
+Duplo Burger com Queijo
+478
+26

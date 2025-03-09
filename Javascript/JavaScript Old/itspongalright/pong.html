@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong</title>
+</head>
+<body style="margin: 0; background: black;">
+    <canvas width="1516" height="732" style="display:flex; margin: auto; border: solid white 10px; border-radius: 1rem;"></canvas>
+
+    <script>
+        //var bola
+        var xBola=758;
+        var yBola=366;
+        var velocXBola=8;
+        var velocYBola=5;
+        //var raquete
+        var xRaquete=15;
+        var yRaquete=291;
+        //var raquete oponente
+        var xRaqueteOponente=1490;
+        var yRaqueteOponente=291;
+        var hitboxOponente=291;
+        //detectar teclas de seta (números ja categorizados em uma tabela)
+        var cima=38;
+        var baixo=40;
+        //taxa pra andar
+        var taxa=20
+        //placar
+        var pontos=0;
+        var pontosOponente=0;
+        //som
+        var raquetada=new Audio('./raquetada.mp3');
+        var vineboom=new Audio('./vineboom.mp3');
+
+        function limparTela(){
+            pincel.clearRect(0,0,1516,732);
+            pincel.fillStyle="black";
+            pincel.fillRect(0,0,1516,732);
+        }
+
+        function drawCirculo(){
+            pincel.fillStyle="white";
+            pincel.beginPath();
+            pincel.arc(xBola,yBola,10,0,2*Math.PI);
+            pincel.fill();
+            xBola+=velocXBola;
+            yBola+=velocYBola;
+        }
+
+        function drawRetangulo(x,y,cor){
+            pincel.fillStyle=cor;
+            pincel.fillRect(x,y,10,150);
+        }
+
+        function drawPlacar(){
+            pincel.fillStyle="white";
+            pincel.fillRect(447,34,144,54);
+            pincel.fillRect(897,34,144,54);
+            pincel.fillStyle="black";
+            pincel.fillRect(449,36,140,50);
+            pincel.fillRect(899,36,140,50);
+            pincel.fillStyle="white";
+            pincel.font = "30px serif";
+            pincel.fillText("Its pong alright",656,76);
+            pincel.font = "50px serif";
+            pincel.fillText(pontos,506,76);
+            pincel.fillText(pontosOponente,956,76);
+        }
+
+        //raquete leitura da tecla
+        function leituraTeclado(evento){
+            switch (evento.keyCode){
+            case cima:
+                yRaquete=yRaquete-taxa;
+                break;
+            case baixo:
+                yRaquete=yRaquete+taxa;
+            }
+        }
+
+        var tela=document.querySelector('canvas');
+        var pincel=tela.getContext('2d');
+        function draw(){
+            limparTela();
+            drawCirculo();
+            hitboxOponente=yBola-75;
+            if(yBola>80&&yBola<652){
+                yRaqueteOponente=yBola
+            }
+            drawRetangulo(xRaquete,yRaquete,"white");
+            drawRetangulo(xRaqueteOponente,yRaqueteOponente-75,"white");
+            drawPlacar();
+            if(xBola>1506){
+                velocXBola*=-1;
+                pontos++;
+                vineboom.play();
+            }
+            if(xBola<10){
+                velocXBola*=-1;
+                pontosOponente++;
+                vineboom.play();
+            }
+            if(yBola>722||yBola<10){
+                velocYBola*=-1;
+            }
+            //c:\Users\Manoel\Downloads\explicação1.png
+            if(xBola - 10 < xRaquete + 10 && yBola - 10 < yRaquete + 150 && yBola + 10 > yRaquete){
+                velocXBola*=-1;
+                velocXBola=velocXBola+0.2;
+                raquetada.play();
+            }
+            if(xBola + 10 > xRaqueteOponente && yBola - 10 < hitboxOponente + 150 && yBola + 10 > hitboxOponente){
+                velocXBola*=-1;
+                velocXBola=velocXBola-0.2;
+                raquetada.play();
+            }
+            
+        }
+
+        setInterval(draw,20);
+        document.onkeydown = leituraTeclado;
+
+    </script>
+</body>
+</html>
