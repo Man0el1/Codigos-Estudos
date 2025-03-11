@@ -1,5 +1,5 @@
 from PIL import Image
-im = Image.open("python_challenge\\challenge7_zoxygen.png")
+im = Image.open("Phyton\python_challenge\challenge7_zoxygen.png")
 
 im = im.convert('RGB')
 im = im.crop((0, 45, 605, 50))

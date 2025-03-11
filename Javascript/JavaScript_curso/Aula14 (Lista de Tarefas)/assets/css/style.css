@@ -28,11 +28,11 @@ body {
     border-radius: 10px;
 }
 
-.input-nova-tarefa{
+.input-tarefa{
     height: 26px;
 }
 
-.btn-add-tarefa {
+.btn-tarefa {
     margin-left: 10px;
     border: none;
     background: var(--primary-color);
@@ -42,6 +42,6 @@ body {
     cursor: pointer;
 }
 
-.btn-add-tarefa:hover {
+.btn-tarefa:hover {
     background: var(--primary-color-dark);
 }

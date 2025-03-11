@@ -12,7 +12,7 @@ function main() {
                 const btn = document.createElement('button');
                 btn.id = `${i}d${lado}`;
                 
-                btn.addEventListener('click', function(event){
+                btn.addEventListener('click', function(){
                     calcularResultado(String(btn.id));
                 });
 

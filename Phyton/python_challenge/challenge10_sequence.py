@@ -30,5 +30,5 @@ for xd in range(26):
 
     a.append(numero_seguinte)
 
-print("Esse aqui ó")
+print("Esse aqui")
 print(len(a[30]))

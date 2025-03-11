@@ -1,6 +1,7 @@
 from PIL import Image
 
-im = Image.open("python_challenge\\challenge11_thecave.jpg")
+file_name = "Phyton\python_challenge\challenge11_thecave.jpg"
+im = Image.open(file_name)
 
 #640x480
 cod_x = 0

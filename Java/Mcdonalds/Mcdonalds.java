@@ -49,7 +49,7 @@ class frameDoMenu extends JFrame {
     public frameDoMenu() throws IOException {
         Alimento alimento;
         try (Scanner teclado = new Scanner(
-                new File("./menuMc.txt"))) {
+                new File("menuMc.txt"))) {
             for (int x = 1; x <= 13; x++) {
                 alimento = new Alimento(teclado.nextLine(), Integer.parseInt(teclado.nextLine()),
                         Double.parseDouble(teclado.nextLine()));
@@ -73,9 +73,9 @@ class frameDoMenu extends JFrame {
         add(new JLabel("R$" + alimento.getPreçoString()));
     }
 }
-
-class mostrarFrame {
-    public static void main(String args[]) throws IOException {
+ 
+class mostrarFrame{
+    public static void main(String[] args) throws IOException {
         new frameDoMenu();
     }
 }

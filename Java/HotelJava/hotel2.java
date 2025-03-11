@@ -12,7 +12,7 @@ public class hotel2 {
         try (// Scanners e ints, for define que os numeros do txt são numQuartos e armazenam
              // hospedes
                 Scanner armazem = new Scanner(
-                        new File("C:\\Users\\LENOVO\\Desktop\\Codigos\\Codigos java\\HotelJava\\quartos2.txt"))) {
+                        new File("Java\\HotelJava\\quartos2.txt"))) {
             try (Scanner teclado = new Scanner(System.in)) {
                 int hospedes[] = new int[10];
                 int numQuarto;
@@ -42,7 +42,7 @@ public class hotel2 {
                             out.printf("Quantos hóspedes iram se ocupar no quarto %d? ", numQuarto);
                             hospedes[numQuarto] = teclado.nextInt();
                             try (PrintStream listout = new PrintStream(
-                                    "C:\\Users\\LENOVO\\Desktop\\Codigos\\Codigos java\\HotelJava\\quartos2.txt")) {
+                                    "Java\\HotelJava\\quartos2.txt")) {
                                 for (numQuarto = 0; numQuarto < hospedes.length; numQuarto++) {
                                     listout.print(hospedes[numQuarto] + " ");
                                 }
@@ -59,7 +59,7 @@ public class hotel2 {
                         } else {
                             hospedes[x] = 0;
                             try (PrintStream listout = new PrintStream(
-                                    "C:\\Users\\LENOVO\\Desktop\\Codigos\\Codigos java\\HotelJava\\quartos2.txt")) {
+                                    "Java\\HotelJava\\quartos2.txt")) {
                                 for (numQuarto = 0; numQuarto < hospedes.length; numQuarto++) {
                                     listout.print(hospedes[numQuarto] + " ");
                                 }
