@@ -7,7 +7,7 @@ pd.plotting.register_matplotlib_converters()
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-residuos_file_path = "C://Users//LENOVO//Desktop//Codigos//Codigos phyton//previsao//dados_previsao.csv"
+residuos_file_path = "Phyton//previsao//dados_previsao.csv"
 residuos_data = pd.read_csv(residuos_file_path, index_col="Ano")
 
 y = residuos_data["Total Aterros(Ton)"]
@@ -29,13 +29,13 @@ model = RandomForestRegressor(n_estimators=1000, random_state=0, max_depth=4)
 def pontuar_previsao(X_train, X_valid, y_train, y_valid):
     model.fit(X_train, y_train)
     preds = model.predict(X_valid)
-    print(f"Previsões do treino:{preds}")
+    print(f"Previsoes do treino:{preds}")
     return int(mean_absolute_error(y_valid, preds))
 
-print(f"pontuação do treino: {pontuar_previsao(imputed_X_train, imputed_X_valid, y_train, y_valid)}")
+print(f"pontuacao do treino: {pontuar_previsao(imputed_X_train, imputed_X_valid, y_train, y_valid)}")
 print(y_valid)
 
-previsao_file_path = "C://Users//LENOVO//Desktop//Codigos//Codigos phyton//previsao//dados_futuros.csv"
+previsao_file_path = "Phyton//previsao//dados_futuros.csv"
 previsao_data = pd.read_csv(previsao_file_path, index_col="Ano")
 
 X_previsao = previsao_data.drop(columns=["Total Aterros(Ton)"])
