@@ -41,3 +41,6 @@ body {
 #btn-enviar:hover {
     background: var(--primary-color-dark);
 }
+.calculadora {
+    width: 400px;
+}

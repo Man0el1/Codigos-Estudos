@@ -14,15 +14,15 @@ frame_meme = Frame(janela)
 frame_meme.grid(row=0, column=0, sticky="nsew")
 
 pygame.mixer.init()
-musica = pygame.mixer.Sound("wanted.mp3")
+musica = pygame.mixer.Sound("Phyton/projetos_pessoais/find_luigi/wanted.mp3")
 musica.play(loops=-1)
 
-img = Image.open("wanted_luigi.png")
+img = Image.open("Phyton/projetos_pessoais/find_luigi/wanted_luigi.png")
 imagem_wanted = ImageTk.PhotoImage(img.resize(tamanho_janela))
 wanted_luigi = tk.Label(frame_procurado, image=imagem_wanted, bd=0)
 wanted_luigi.grid()
 
-img_luigi = ImageTk.PhotoImage(Image.open("luigi.png"))
+img_luigi = ImageTk.PhotoImage(Image.open("Phyton/projetos_pessoais/find_luigi/luigi.png"))
 luigi = tk.Label(frame_principal, image=img_luigi, bd=0)
 luigi.grid()
 
