@@ -40,7 +40,7 @@ def imagem_transparente(image_filename):
     
 def selecionar_imagem():
     global filename
-    filename = fd.askopenfilename(title="Escolha uma imagem", filetypes=[("Arquivos PNG", "*.png"),("Arquivos JPEG", "*.jpeg")])
+    filename = fd.askopenfilename(title="Escolha uma imagem", filetypes=[("Arquivos PNG", "*.png"),("Arquivos JPEG", "*.jpeg"),("Arquivos JPG", "*.jpg")])
 
 filename = ""
 imagem = None

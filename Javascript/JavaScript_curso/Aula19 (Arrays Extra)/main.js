@@ -50,4 +50,4 @@ const numeroFinal = numerosDobrados.reduce(function(acumulador, valor){
     acumulador += valor;
     return acumulador;
 });
-console.log(`Resultado final: ${numeroFinal}`)
+console.log(`Resultado final: ${numeroFinal}`);
